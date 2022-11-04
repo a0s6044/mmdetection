@@ -129,8 +129,8 @@ test_pipeline = [
         ])
 ]
 data = dict(
-    imgs_per_gpu=6,
-    workers_per_gpu=6,
+    imgs_per_gpu=1,
+    workers_per_gpu=8,
     train=dict(
         type=dataset_type,
         ann_file=data_root + 'train.txt',
@@ -166,7 +166,7 @@ log_config = dict(
     ])
 # yapf:enable
 # runtime settings
-total_epochs = 10
+total_epochs = 2
 dist_params = dict(backend='nccl')
 log_level = 'INFO'
 work_dir = '/content/work_dirs/faster_rcnn_r101_fpn_1x'
